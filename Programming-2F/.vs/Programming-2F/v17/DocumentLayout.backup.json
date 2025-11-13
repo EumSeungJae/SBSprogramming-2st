@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8D9D43CE-D658-4A3A-886E-71B87F00BE1D}|a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9.vcxproj|C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8D9D43CE-D658-4A3A-886E-71B87F00BE1D}|a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9.vcxproj|solutionrelative:a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2321E763-0F51-433B-B268-F87922B98346}|a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130.vcxproj|C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2321E763-0F51-433B-B268-F87922B98346}|a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130.vcxproj|solutionrelative:a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "02_main.c",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c",
+              "RelativeDocumentMoniker": "a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c",
+              "RelativeToolTip": "a02_\uBA54\uBAA8\uB9AC \uB3D9\uC801 \uD560\uB2F9\\02_main.c",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAEMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-11-13T06:58:21.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "01_main.c",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c",
               "RelativeDocumentMoniker": "a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c",
               "ToolTip": "C:\\Users\\user\\Desktop\\SBSprogramming-2st\\Programming-2F\\a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c",
               "RelativeToolTip": "a01_\uAD6C\uC870\uCCB4\uC640 \uD3EC\uC778\uD130\\01_main.c",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFYAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-11-12T07:16:31.079Z",
               "EditorCaption": ""

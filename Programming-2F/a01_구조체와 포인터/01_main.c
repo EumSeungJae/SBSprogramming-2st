@@ -23,7 +23,7 @@ typedef struct //
 // Monster* monster = ?;
 // Monster  monster = ?;
 // 구조체는 무조건 포인터로 쓰는게 좋은가요? = 그건 아니다.
-void PrintMonsterInfo(Monster* monster)
+void PrintMonsterInfo(const Monster* monster)
 {
 	printf("이름 : %s, 체력 : %d, 공격력 : %d, 방어력 : %d\n", monster->name, monster->hp, monster->atk, monster->def);
 
@@ -79,8 +79,8 @@ int main()
 
 	SetMonsterData(&Orc);
 
-	PrintMonsterInfo(goblin);
-	PrintMonsterInfo(Orc);
+	PrintMonsterInfo(&goblin);
+	PrintMonsterInfo(&Orc);
 
 }
 
