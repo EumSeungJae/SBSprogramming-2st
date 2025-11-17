@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a02_메모리 동적 할당
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a03_형변환과 범용포인터", "a03_형변환과 범용포인터\a03_형변환과 범용포인터.vcxproj", "{5A22EBCB-0A9A-4998-A219-DF45A9C1F341}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a04_함수 포인터에 대한 이해", "a04_함수 포인터에 대한 이해\a04_함수 포인터에 대한 이해.vcxproj", "{86765E6D-5D95-48DA-9A6D-2446FBD9466E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "b01_개인프로젝트", "b01_개인프로젝트\b01_개인프로젝트.vcxproj", "{E0F49169-55E4-46E0-8366-2407F276C21A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +45,22 @@ Global
 		{5A22EBCB-0A9A-4998-A219-DF45A9C1F341}.Release|x64.Build.0 = Release|x64
 		{5A22EBCB-0A9A-4998-A219-DF45A9C1F341}.Release|x86.ActiveCfg = Release|Win32
 		{5A22EBCB-0A9A-4998-A219-DF45A9C1F341}.Release|x86.Build.0 = Release|Win32
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Debug|x64.ActiveCfg = Debug|x64
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Debug|x64.Build.0 = Debug|x64
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Debug|x86.ActiveCfg = Debug|Win32
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Debug|x86.Build.0 = Debug|Win32
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Release|x64.ActiveCfg = Release|x64
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Release|x64.Build.0 = Release|x64
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Release|x86.ActiveCfg = Release|Win32
+		{86765E6D-5D95-48DA-9A6D-2446FBD9466E}.Release|x86.Build.0 = Release|Win32
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Debug|x64.ActiveCfg = Debug|x64
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Debug|x64.Build.0 = Debug|x64
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Debug|x86.ActiveCfg = Debug|Win32
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Debug|x86.Build.0 = Debug|Win32
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Release|x64.ActiveCfg = Release|x64
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Release|x64.Build.0 = Release|x64
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Release|x86.ActiveCfg = Release|Win32
+		{E0F49169-55E4-46E0-8366-2407F276C21A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
