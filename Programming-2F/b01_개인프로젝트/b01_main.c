@@ -3,7 +3,9 @@
 
 typedef struct {
 	int STR;
+	int INT;
 	int VIT;
+	int AGI;
 	int DEX;
 }_Stetus;
 typedef struct {
