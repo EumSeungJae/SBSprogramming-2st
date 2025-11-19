@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "b01_개인프로젝트", "b
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a05_자기참조구조체", "a05_자기참조구조체\a05_자기참조구조체.vcxproj", "{4502BAF2-3662-4432-9F7E-D5CD69761700}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a06_구조체와 배열과 포인터", "a06_구조체와 배열과 포인터\a06_구조체와 배열과 포인터.vcxproj", "{D4D8E544-30A9-4A3D-8898-2185614BC5FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{4502BAF2-3662-4432-9F7E-D5CD69761700}.Release|x64.Build.0 = Release|x64
 		{4502BAF2-3662-4432-9F7E-D5CD69761700}.Release|x86.ActiveCfg = Release|Win32
 		{4502BAF2-3662-4432-9F7E-D5CD69761700}.Release|x86.Build.0 = Release|Win32
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Debug|x64.ActiveCfg = Debug|x64
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Debug|x64.Build.0 = Debug|x64
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Debug|x86.ActiveCfg = Debug|Win32
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Debug|x86.Build.0 = Debug|Win32
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Release|x64.ActiveCfg = Release|x64
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Release|x64.Build.0 = Release|x64
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Release|x86.ActiveCfg = Release|Win32
+		{D4D8E544-30A9-4A3D-8898-2185614BC5FB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

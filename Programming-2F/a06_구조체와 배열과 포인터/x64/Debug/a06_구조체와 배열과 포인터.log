@@ -1,0 +1,5 @@
+﻿  06_main.c
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a06_구조체와 배열과 포인터\06_main.c(113,8): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a06_구조체와 배열과 포인터\06_main.c(145,10): warning C4101: 'monster_3' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a06_구조체와 배열과 포인터\06_main.c(144,10): warning C4101: 'monster_2' :참조되지 않은 지역 변수입니다.
+  a06_구조체와 배열과 포인터.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\a06_구조체와 배열과 포인터.exe
