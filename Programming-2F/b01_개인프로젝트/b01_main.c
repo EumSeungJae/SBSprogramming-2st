@@ -37,8 +37,8 @@
 *					ㄴ 4개의 몬스터룸, 3개의 공터, 2개의 이동룸, 1개의 이벤트룸
 *					ㄴ 몬스터 조우시 2마리씩 랜덤출현
 *  게임목표 : 10층의 보스 토벌
-* 
-*  개발노트	
+*
+*  개발노트
 * 몬스터와 플레이어의 기본적인 요소 스테이터스와 어빌리티 구축
 * 플레이어의 기본 구조체 구축
 * 몬스터의 기본 구조체 구축
@@ -46,7 +46,7 @@
 * 몬스터 enum 구조체 간편화 밑 몬스터 라이브러리 제작
 * 랜덤 몬스터 출력 > 스위치로 몬스터 type 분류후 & 스텟분배
 * 몬스터 능력치 배분 확인완료
-* 
+*
 */
 
 
@@ -65,9 +65,9 @@ int main()
 	monster_1.Monster_Ability.Damage = 0;
 	monster_2.Monster_Ability.Damage = 0;
 
-	Monster_Name_Library(&monster_1,layer);
+	Monster_Name_Library(&monster_1, layer);
 	Monster_Status_Library(&monster_1);
-	Monster_Ability_Setting(&monster_1,layer);
+	Monster_Ability_Setting(&monster_1, layer);
 	printf("%d 층\n", layer);
 	printf("몬스터_1 의 정보\n");
 	printf("몬스터의 이름 : %s\n", monster_1.Name);
@@ -101,31 +101,70 @@ int main()
 	// printf("HIT	: %d\n", monster_1.Monster_Ability.HIT);
 	printf("SPD : % d\n", monster_2.Monster_Ability.SPEED);
 
-	_getch();
+	
 
-
-	for (int i = 0; monster_1.Monster_Ability.Damage < monster_1.Monster_Ability.MAX_HP
-		|| monster_2.Monster_Ability.MAX_HP > monster_2.Monster_Ability.Damage; i++)
+	while (monster_1.Monster_Ability.NOW_HP > 0 ||
+		monster_2.Monster_Ability.NOW_HP > 0)
 	{
-		printf("배틀");
-		
+		int Damage = 0;
+		printf("배틀\n");
+
 		if (monster_1.Monster_Ability.SPEED < monster_2.Monster_Ability.SPEED)
 		{
-			printf(" 선공권은 %s 가 가져간다.", monster_2.Name);
+			// 스피드로 인한 선공개념
+			printf(" 선공권은 %s 가 가져간다.\n", monster_2.Name);
+			// 몬스터 1이 받을 데미지
 			monster_1.Monster_Ability.Damage =
-			monster_1.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!", monster_2.Name, monster_1.Name,
-				monster_1.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK));
+				monster_1.Monster_Ability.NOW_HP - (monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
+			// 몬스터 1이 받는 데미지 출력
+			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
+				monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
+			// 몬스터 1의 현재 체력 출력
+			printf("%s 의 남은 HP : %d",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
+			// 몬스터 2가 받을 데미지
+			monster_2.Monster_Ability.Damage =
+				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
+			// 몬스터 2가 받은 데미지 출력
+			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
+				monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
+			// 몬스터 2의 현재 체력 출력
+			printf("%s 의 남은 HP : %d",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
 		}
 		else if (monster_1.Monster_Ability.SPEED > monster_2.Monster_Ability.SPEED)
 		{
-			printf(" 선공권은 %s 가 가져간다.", monster_1.Name);
+			// 스피드로 인한 선공개념
+			printf(" 선공권은 %s 가 가져간다.\n", monster_1.Name);
+			// 몬스터 2이 받을 데미지
 			monster_2.Monster_Ability.Damage =
-				monster_2.Monster_Ability.NOW_HP - (monster_2.Monster_Ability.DEF - monster_1.Monster_Ability.ATK);
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!", monster_1.Name, monster_2.Name,
-				monster_2.Monster_Ability.NOW_HP - (monster_2.Monster_Ability.DEF - monster_1.Monster_Ability.ATK));
+				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
+			// 몬스터 2이 받는 데미지 출력
+			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
+				monster_2.Monster_Ability.DEF - monster_1.Monster_Ability.ATK);
+			// 몬스터 2의 현재 체력 출력
+			printf("%s 의 남은 HP : %d", monster_2.Monster_Ability.NOW_HP);
+			// 몬스터 1가 받을 데미지
+			monster_1.Monster_Ability.Damage =
+				monster_1.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
+			// 몬스터 1가 받은 데미지 출력
+			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
+				monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
+			// 몬스터 1의 현재 체력 출력
+			printf("%s 의 남은 HP : %d", monster_1.Monster_Ability.NOW_HP);
+
+		}
+		
+		if (monster_1.Monster_Ability.NOW_HP <= 0)
+		{
+			printf("%s 는 쓰러졋다!", monster_1.Name);
+			break;
+		}
+		else if (monster_2.Monster_Ability.NOW_HP <= 0)
+		{
+			printf("%s 는 쓰러졋다!", monster_2.Name);
+			break;
 		}
 		_getch();
+
 	}
 	_getch();
 }
