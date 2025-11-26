@@ -1,0 +1,3 @@
+﻿  07_main.c
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a07_파일 시스템 구현\07_main.c(40,10): warning C4101: 'rabbit' :참조되지 않은 지역 변수입니다.
+  a07_파일 시스템 구현.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\a07_파일 시스템 구현.exe

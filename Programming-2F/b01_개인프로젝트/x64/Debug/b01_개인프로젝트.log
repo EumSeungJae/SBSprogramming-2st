@@ -1,0 +1,7 @@
+﻿  b01_main.c
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\b01_main.c(59,2): warning C4013: 'srand'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\b01_main.c(59,8): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\b01_main.c(69,2): warning C4013: 'Monster_Status_Library'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\b01_main.c(70,2): warning C4013: 'Monster_Ability_Setting'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\b01_main.c(104,2): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  b01_개인프로젝트.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\b01_개인프로젝트.exe
