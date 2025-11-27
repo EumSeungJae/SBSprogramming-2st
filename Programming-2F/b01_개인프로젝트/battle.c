@@ -34,9 +34,9 @@ void Monster_Ability_Setting(Monster_Setting_* monster, int layer)
 	}
 	monster->Monster_Ability.MAX_HP = (monster->Monster_Stat.VIT * 50) *Enhance;
 	monster->Monster_Ability.MAX_MP = (monster->Monster_Stat.INT * 20) * Enhance;
-	monster->Monster_Ability.NOW_HP = (monster->Monster_Ability.MAX_HP - monster->Monster_Ability.Damage) * Enhance;
-	monster->Monster_Ability.NOW_MP = (monster->Monster_Ability.MAX_MP - monster->Monster_Ability.Use_MP) * Enhance;
-	monster->Monster_Ability.ATK = (monster->Monster_Stat.STR * 5) * Enhance;
+	monster->Monster_Ability.NOW_HP = (monster->Monster_Ability.MAX_HP - monster->Monster_Ability.Damage);
+	monster->Monster_Ability.NOW_MP = (monster->Monster_Ability.MAX_MP - monster->Monster_Ability.Use_MP);
+	monster->Monster_Ability.ATK = ((monster->Monster_Stat.STR * 5)+(monster->Monster_Stat.DEX*2 ))* Enhance;
 	monster->Monster_Ability.DEF = (monster->Monster_Stat.VIT * 5) * Enhance;
 	monster->Monster_Ability.MATK = (monster->Monster_Stat.INT * 4) * Enhance;
 	monster->Monster_Ability.MDEF = ((monster->Monster_Stat.VIT * 2) + (monster->Monster_Stat.INT * 2)) * Enhance;

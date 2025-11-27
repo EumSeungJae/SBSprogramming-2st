@@ -1,11 +1,11 @@
-
+#include "player.h"
 
 void Open_Inventory_Console()
 {
 
 }
 
-void Open_Shop_Console()
+void Open_Shop_Console(int layer)
 {
 
 }

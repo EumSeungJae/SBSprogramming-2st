@@ -46,7 +46,8 @@
 * 몬스터 enum 구조체 간편화 밑 몬스터 라이브러리 제작
 * 랜덤 몬스터 출력 > 스위치로 몬스터 type 분류후 & 스텟분배
 * 몬스터 능력치 배분 확인완료
-*
+* 전투시스템 완성 단/ 방어력 > 공격력 시 체력이 추가되어버림.
+* 
 */
 
 
@@ -114,42 +115,42 @@ int main()
 			// 스피드로 인한 선공개념
 			printf(" 선공권은 %s 가 가져간다.\n", monster_2.Name);
 			// 몬스터 1이 받을 데미지
-			monster_1.Monster_Ability.Damage =
+			monster_1.Monster_Ability.NOW_HP =
 				monster_1.Monster_Ability.NOW_HP - (monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
 			// 몬스터 1이 받는 데미지 출력
 			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
 				monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
 			// 몬스터 1의 현재 체력 출력
-			printf("%s 의 남은 HP : %d",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
+			printf("%s 의 남은 HP : %d\n",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
 			// 몬스터 2가 받을 데미지
-			monster_2.Monster_Ability.Damage =
+			monster_2.Monster_Ability.NOW_HP =
 				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
 			// 몬스터 2가 받은 데미지 출력
 			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
 				monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
 			// 몬스터 2의 현재 체력 출력
-			printf("%s 의 남은 HP : %d",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
+			printf("%s 의 남은 HP : %d\n",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
 		}
 		else if (monster_1.Monster_Ability.SPEED > monster_2.Monster_Ability.SPEED)
 		{
 			// 스피드로 인한 선공개념
 			printf(" 선공권은 %s 가 가져간다.\n", monster_1.Name);
 			// 몬스터 2이 받을 데미지
-			monster_2.Monster_Ability.Damage =
+			monster_2.Monster_Ability.NOW_HP =
 				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
 			// 몬스터 2이 받는 데미지 출력
 			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
 				monster_2.Monster_Ability.DEF - monster_1.Monster_Ability.ATK);
 			// 몬스터 2의 현재 체력 출력
-			printf("%s 의 남은 HP : %d", monster_2.Monster_Ability.NOW_HP);
+			printf("%s 의 남은 HP : %d",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
 			// 몬스터 1가 받을 데미지
-			monster_1.Monster_Ability.Damage =
+			monster_1.Monster_Ability.NOW_HP =
 				monster_1.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
 			// 몬스터 1가 받은 데미지 출력
 			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
 				monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
 			// 몬스터 1의 현재 체력 출력
-			printf("%s 의 남은 HP : %d", monster_1.Monster_Ability.NOW_HP);
+			printf("%s 의 남은 HP : %d",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
 
 		}
 		
@@ -163,7 +164,6 @@ int main()
 			printf("%s 는 쓰러졋다!", monster_2.Name);
 			break;
 		}
-		_getch();
 
 	}
 	_getch();
