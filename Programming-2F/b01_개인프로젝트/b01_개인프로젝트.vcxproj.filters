@@ -19,12 +19,12 @@
     <Filter Include="헤더 파일\플레이어 셋">
       <UniqueIdentifier>{3b713d85-5f52-48f2-bf97-a7d7acd2d2af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\미궁용">
+      <UniqueIdentifier>{fdd14582-0537-4223-b077-22ea7b930b2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="b01_main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="battle.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="player.c">
@@ -33,14 +33,26 @@
     <ClCompile Include="monster.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="labyrinth.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Screen.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Skill.c">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="parson.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="battle.c">
+      <Filter>소스 파일\미궁용</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.c">
+      <Filter>소스 파일\미궁용</Filter>
+    </ClCompile>
+    <ClCompile Include="labyrinth.c">
+      <Filter>소스 파일\미궁용</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,19 +65,22 @@
     <ClInclude Include="monster.h">
       <Filter>헤더 파일\몬스터셋</Filter>
     </ClInclude>
-    <ClInclude Include="monster_setting.h">
-      <Filter>헤더 파일\몬스터셋</Filter>
-    </ClInclude>
     <ClInclude Include="labyrinth.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
       <Filter>헤더 파일\플레이어 셋</Filter>
     </ClInclude>
-    <ClInclude Include="player_setting.h">
-      <Filter>헤더 파일\플레이어 셋</Filter>
-    </ClInclude>
     <ClInclude Include="Skill.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="parson.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,50 +1,64 @@
 #include "Screen.h"
 #include<stdio.h>
 #include <Windows.h>
+#include "Entity.h"
 
 static int g_nScreenIndex;
 static HANDLE g_hScreen[2];
 
 void ScreenInit()
 {
-    CONSOLE_CURSOR_INFO cci;
+	CONSOLE_CURSOR_INFO cci;
 
-    //화면 버퍼 2개를 만든다.
-    g_hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE,
-        0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
-    g_hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE,
-        0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+	//화면 버퍼 2개를 만든다.
+	g_hScreen[0] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE,
+		0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+	g_hScreen[1] = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE,
+		0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 
-    //커서 숨기기
-    cci.dwSize = 1;
-    cci.bVisible = FALSE;
-    SetConsoleCursorInfo(g_hScreen[0], &cci);
-    SetConsoleCursorInfo(g_hScreen[1], &cci);
+	//커서 숨기기
+	cci.dwSize = 1;
+	cci.bVisible = FALSE;
+	SetConsoleCursorInfo(g_hScreen[0], &cci);
+	SetConsoleCursorInfo(g_hScreen[1], &cci);
 }
 void ScreenFlipping()
 {
-    SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
-    g_nScreenIndex = !g_nScreenIndex;
+	SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
+	g_nScreenIndex = !g_nScreenIndex;
 }
 
 void ScreenClear()
 {
-    COORD Coor = { 0,0 };
-    DWORD dw;
-    FillConsoleOutputCharacter(g_hScreen[g_nScreenIndex], ' ', 80 * 25, Coor, &dw);
+	COORD Coor = { 0,0 };
+	DWORD dw;
+	FillConsoleOutputCharacter(g_hScreen[g_nScreenIndex], ' ', 80 * 25, Coor, &dw);
 }
 
 void ScreenRelease()
 {
-    CloseHandle(g_hScreen[0]);
-    CloseHandle(g_hScreen[1]);
+	CloseHandle(g_hScreen[0]);
+	CloseHandle(g_hScreen[1]);
 }
 
 void ScreenPrint(int x, int y, char* string)
 {
-    DWORD dw;
-    COORD CursorPosition = { x, y };
-    SetConsoleCursorPosition(g_hScreen[g_nScreenIndex], CursorPosition);
-    WriteFile(g_hScreen[g_nScreenIndex], string, strlen(string), &dw, NULL);
+	DWORD dw;
+	COORD CursorPosition = { x, y };
+	SetConsoleCursorPosition(g_hScreen[g_nScreenIndex], CursorPosition);
+	//SetColor(g_hScreen[g_nScreenIndex],빨강,검정);
+	WriteFile(g_hScreen[g_nScreenIndex], string, strlen(string), &dw, NULL);
 
 }
+/*
+void SetColor(HANDLE hconsole, Color text_color, Color bg_color)
+{
+	HANDLE hconsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hconsole, (bg_color << 4) | text_color);
+}
+
+void ResetColor(HANDLE hconsole)
+{
+	SetColor(g_hScreen[g_nScreenIndex], 흰색, 검정);
+}
+*/

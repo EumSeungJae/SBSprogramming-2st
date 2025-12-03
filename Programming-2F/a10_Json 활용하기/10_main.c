@@ -55,7 +55,6 @@ int main()
 			json_object_dotget_string(array_Object, "name"),
 			json_object_dotget_number(array_Object, "price"));
 		
-
 	}
 	
 }

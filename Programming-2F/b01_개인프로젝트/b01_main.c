@@ -1,7 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
 
-#include "monster_setting.h"
+#include "Entity.h"
+#include "battle.h"
+#include "Screen.h"
+#include "Title.h"
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <Windows.h>
+#include <time.h>
+#include <stdbool.h>
+#include <conio.h>
 
 // 1. 주인공. 플레이어블 캐릭터. 조작하는 대상.
 // 데이터로 표현하세요. 구조체로 만드세요.
@@ -17,7 +27,7 @@
 
 
 /*
-*  개발목표 : 변화의 미궁 탐사
+*  개발목표 : 미궁 탐사 (텍스트 RPG)
 *  입력방법 : 키보드입력
 *  개발목차 :  1. 몬스터와 플레이어 제작
 *				ㄴ 몬스터 15종 구성요소 제작
@@ -47,6 +57,20 @@
 * 랜덤 몬스터 출력 > 스위치로 몬스터 type 분류후 & 스텟분배
 * 몬스터 능력치 배분 확인완료
 * 전투시스템 완성 단/ 방어력 > 공격력 시 체력이 추가되어버림.
+*	ㄴ 
+* 명중시스템 도입 기본 80 < 랜덤함수 로 20%확률로 회피가능
+*	ㄴ 요구사항 : DEX로 명중률을 올리는 값을 추가하고싶음
+*				  AGI로 피격률을 낮추는 값을 추가하고싶음
+*		ㄴ 결정사항 : 2단 계산으로 명중치 계산이후 회피계산을 넣기로 결정 
+* 몬스터 조우시스템 - 1~2 마리 조우시스템
+*	ㄴ 한마리의 몬스터가 쓰러질시 남은 한마리와 전투 속행
+* 배틀함수 일부 수정
+*	ㄴ 수정내용 : 전투중 데미지 계산 정리.
+*					
+* 플레이어와 몬스터 2개의 공동전투를 위해 구조체를 통합시킴
+* 3개체의 전투를 하고자 코딩을 짯지만 너무 난잡해져서 Ai를 통해
+* 확 축소된 코딩을 출력 및 응용
+* 
 * 
 */
 
@@ -57,114 +81,43 @@
 
 int main()
 {
+	ScreenInit();
+	GameTitle();
+
 	srand(time(NULL));
-	int layer = 1;
-	Monster_Setting_ monster_1;
-
-	Monster_Setting_ monster_2;
-
-	monster_1.Monster_Ability.Damage = 0;
-	monster_2.Monster_Ability.Damage = 0;
-
-	Monster_Name_Library(&monster_1, layer);
-	Monster_Status_Library(&monster_1);
-	Monster_Ability_Setting(&monster_1, layer);
-	printf("%d 층\n", layer);
-	printf("몬스터_1 의 정보\n");
-	printf("몬스터의 이름 : %s\n", monster_1.Name);
-	printf("HP	: %d / %d\n", monster_1.Monster_Ability.NOW_HP, monster_1.Monster_Ability.MAX_HP);
-	printf("MP	: %d / %d\n", monster_1.Monster_Ability.NOW_MP, monster_1.Monster_Ability.MAX_MP);
-	printf("ATK : %d\n", monster_1.Monster_Ability.ATK);
-	printf("MATK: %d\n", monster_1.Monster_Ability.MATK);
-	printf("DEF : %d\n", monster_1.Monster_Ability.DEF);
-	printf("MDEF: %d\n", monster_1.Monster_Ability.MDEF);
-	// printf("AVO : %d\n", monster_1.Monster_Ability.AVOID);
-	// printf("CRT : %d\n", monster_1.Monster_Ability.CRT);
-	// printf("CRTD: %d\n", monster_1.Monster_Ability.CRTD);
-	// printf("HIT	: %d\n", monster_1.Monster_Ability.HIT);
-	printf("SPD : % d\n", monster_1.Monster_Ability.SPEED);
-
-	Monster_Name_Library(&monster_2, layer);
-	Monster_Status_Library(&monster_2);
-	Monster_Ability_Setting(&monster_2, layer);
-	printf("%d 층\n", layer);
-	printf("몬스터_2 의 정보\n");
-	printf("몬스터의 이름 : %s\n", monster_2.Name);
-	printf("HP	: %d / %d\n", monster_2.Monster_Ability.NOW_HP, monster_2.Monster_Ability.MAX_HP);
-	printf("MP	: %d / %d\n", monster_2.Monster_Ability.NOW_MP, monster_2.Monster_Ability.MAX_MP);
-	printf("ATK : %d\n", monster_2.Monster_Ability.ATK);
-	printf("MATK: %d\n", monster_2.Monster_Ability.MATK);
-	printf("DEF : %d\n", monster_2.Monster_Ability.DEF);
-	printf("MDEF: %d\n", monster_2.Monster_Ability.MDEF);
-	// printf("AVO : %d\n", monster_1.Monster_Ability.AVOID);
-	// printf("CRT : %d\n", monster_1.Monster_Ability.CRT);
-	// printf("CRTD: %d\n", monster_1.Monster_Ability.CRTD);
-	// printf("HIT	: %d\n", monster_1.Monster_Ability.HIT);
-	printf("SPD : % d\n", monster_2.Monster_Ability.SPEED);
-
+	Entity_Setting_ m_1;
 	
+	Entity_Setting_ m_2;
+	
+	Entity_Setting_ player;
+	strcpy(player.Name, "플레이어");
+	player.Stat.STR = 5;
+	player.Stat.INT = 5;
+	player.Stat.VIT = 5;
+	player.Stat.AGI = 5;
+	player.Stat.DEX = 5;
+	player.Layer = 1;
+	player.Type = 플레이어;
 
-	while (monster_1.Monster_Ability.NOW_HP > 0 ||
-		monster_2.Monster_Ability.NOW_HP > 0)
-	{
-		int Damage = 0;
-		printf("배틀\n");
 
-		if (monster_1.Monster_Ability.SPEED < monster_2.Monster_Ability.SPEED)
-		{
-			// 스피드로 인한 선공개념
-			printf(" 선공권은 %s 가 가져간다.\n", monster_2.Name);
-			// 몬스터 1이 받을 데미지
-			monster_1.Monster_Ability.NOW_HP =
-				monster_1.Monster_Ability.NOW_HP - (monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
-			// 몬스터 1이 받는 데미지 출력
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
-				monster_2.Monster_Ability.ATK - monster_1.Monster_Ability.DEF);
-			// 몬스터 1의 현재 체력 출력
-			printf("%s 의 남은 HP : %d\n",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
-			// 몬스터 2가 받을 데미지
-			monster_2.Monster_Ability.NOW_HP =
-				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
-			// 몬스터 2가 받은 데미지 출력
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
-				monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
-			// 몬스터 2의 현재 체력 출력
-			printf("%s 의 남은 HP : %d\n",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
-		}
-		else if (monster_1.Monster_Ability.SPEED > monster_2.Monster_Ability.SPEED)
-		{
-			// 스피드로 인한 선공개념
-			printf(" 선공권은 %s 가 가져간다.\n", monster_1.Name);
-			// 몬스터 2이 받을 데미지
-			monster_2.Monster_Ability.NOW_HP =
-				monster_2.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.ATK - monster_2.Monster_Ability.DEF);
-			// 몬스터 2이 받는 데미지 출력
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_1.Name, monster_2.Name,
-				monster_2.Monster_Ability.DEF - monster_1.Monster_Ability.ATK);
-			// 몬스터 2의 현재 체력 출력
-			printf("%s 의 남은 HP : %d",monster_2.Name, monster_2.Monster_Ability.NOW_HP);
-			// 몬스터 1가 받을 데미지
-			monster_1.Monster_Ability.NOW_HP =
-				monster_1.Monster_Ability.NOW_HP - (monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
-			// 몬스터 1가 받은 데미지 출력
-			printf(" %s 가 %s 에게 %d 의 데미지를 주었다!\n", monster_2.Name, monster_1.Name,
-				monster_1.Monster_Ability.DEF - monster_2.Monster_Ability.ATK);
-			// 몬스터 1의 현재 체력 출력
-			printf("%s 의 남은 HP : %d",monster_1.Name, monster_1.Monster_Ability.NOW_HP);
+	Player_Ability_Setting(&player);
 
-		}
-		
-		if (monster_1.Monster_Ability.NOW_HP <= 0)
-		{
-			printf("%s 는 쓰러졋다!", monster_1.Name);
-			break;
-		}
-		else if (monster_2.Monster_Ability.NOW_HP <= 0)
-		{
-			printf("%s 는 쓰러졋다!", monster_2.Name);
-			break;
-		}
+	Monster_Encount(&m_1,&m_2,&player);
 
-	}
 	_getch();
+}
+
+void AddData()
+{
+
+}
+
+void SaveData()
+{
+
+}
+
+void LoadData()
+{
+
 }
