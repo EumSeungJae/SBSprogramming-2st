@@ -82,7 +82,7 @@
 int main()
 {
 	ScreenInit();
-	GameTitle();
+	view_Title();
 
 	srand(time(NULL));
 	Entity_Setting_ m_1;

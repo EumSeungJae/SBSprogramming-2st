@@ -5,7 +5,7 @@
 
 // 게임 시작 - 게임 종료 - 최고점수
 
-void GameTitle()
+void view_Title()
 {
 	int titleCursor = 10;   // 10 / 12 / 14
 	
