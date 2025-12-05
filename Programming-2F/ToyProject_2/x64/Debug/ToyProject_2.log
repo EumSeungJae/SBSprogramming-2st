@@ -2,8 +2,8 @@
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(20,7): warning C4013: '_kbhit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(22,12): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(52,2): warning C4550: 식이 인수 목록이 없는 함수로 계산됩니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(65,18): warning C4047: '함수': 'int'의 간접 참조 수준이 'int **'과(와) 다릅니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(65,18): warning C4024: 'ScreenPrint': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(78,8): warning C4552: '-': 식의 결과가 사용되지 않습니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(82,8): warning C4552: '+': 식의 결과가 사용되지 않습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(66,18): warning C4047: '함수': 'int'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(66,18): warning C4024: 'ScreenPrint': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(79,8): warning C4552: '-': 식의 결과가 사용되지 않습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\ToyProject_2\Title.c(83,8): warning C4552: '+': 식의 결과가 사용되지 않습니다.
   ToyProject_2.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\ToyProject_2.exe

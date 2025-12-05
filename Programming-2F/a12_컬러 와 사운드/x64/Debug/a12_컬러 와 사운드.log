@@ -1,6 +1,4 @@
-﻿  12_main.c
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\12_main.c(34,2): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-  console_monster.c
+﻿  console_monster.c
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(4,2): error C2061: 구문 오류: 식별자 'Color'
   (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
   
@@ -26,4 +24,3 @@ C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.c(5,27): error C2143: 구문 오류: '{'이(가) '*' 앞에 없습니다.
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.c(5,36): error C2059: 구문 오류: ')'
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.c(5,29): error C2054: 'monster' 다음에 '('가 필요합니다.
-  코드를 생성하고 있습니다...

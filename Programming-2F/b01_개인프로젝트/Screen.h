@@ -28,3 +28,4 @@ void ScreenFlipping();
 void ScreenClear();
 void ScreenRelease();
 void ScreenPrint(int x, int y, char* string);
+void gotoxy(int x, int y);

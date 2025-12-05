@@ -57,4 +57,3 @@ void BuySkill(int money,ShopSkillInfo info)
 
 	// 유저의 스킬에 포함시킨다.
 }
-void E

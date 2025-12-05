@@ -1,10 +1,12 @@
 #include "Entity.h"
 #include "battle.h"
-
+#include <Windows.h>
 
 #include <stdio.h>
 
-void Player_Ability_Setting(Entity_Setting_* player)
+void Player_Ability_Setting(
+	Entity_Setting_* player
+)
 {
 	player->Ability.MAX_HP = player->Stat.VIT * 50;
 	player->Ability.MAX_MP = player->Stat.INT * 20;
@@ -19,7 +21,10 @@ void Player_Ability_Setting(Entity_Setting_* player)
 	player->Ability.SPEED = player->Stat.AGI * 4;
 }
 
-void Monster_Ability_Setting(Entity_Setting_* monster, Entity_Setting_* player)
+void Monster_Ability_Setting(
+	Entity_Setting_* monster, 
+	Entity_Setting_* player
+)
 {
 
 	float Enhance = player->Layer / 2; // 플레이어의 층;
@@ -39,44 +44,71 @@ void Monster_Ability_Setting(Entity_Setting_* monster, Entity_Setting_* player)
 	monster->Exp = monster->Exp * (int)Enhance;
 }
 
-void Monster_Encount(Entity_Setting_* monster_1, Entity_Setting_* monster_2, Entity_Setting_* player)
+void Monster_Encount(
+	Entity_Setting_* monster_1, 
+	Entity_Setting_* monster_2, 
+	Entity_Setting_* player
+)
 {
+	printf("몬스터와 조우했다!!\n");
+	Sleep(2000);
+	system("cls");
+	Open_Player_Ability_view(player);
 
 	// 조우하는 몬스터 기본 설정 1
 	int Encount_Monster = rand() % 2;
 
 	if (player->Layer == 1) {
-		Encount_Monster = 1;
+		Encount_Monster = 0;
 	}
 	// 지금 2마리와 전투하게끔 고정시켜놧습니다.
 
-	int* turn = 0;
+	int turn = 0;
 
 	switch (Encount_Monster)
 	{
 	case 0:
-		printf(" - 몬스터 1마리와 조우했다! - \n");
+		memset(monster_1, 0, sizeof(Entity_Setting_));
 		Monster_Name_Library(monster_1, player);
 		Monster_Status_Setting(monster_1);
 		Monster_Ability_Setting(monster_1, player);
+
+		printf(" - %s 와 조우했다! - \n", 
+			monster_1->Name);
+
+		Sleep(1000);
+
+		printf("[%s] HP ) %d\n", 
+			monster_1->Name,
+			monster_1->Ability.NOW_HP);
+
+		Sleep(1000);
 
 		printf("전투를 시작한다!\n");
 		BattleSystem_Encount_1(monster_1, player, &turn);
 		break;
 	case 1:
-		printf(" - 몬스터 2마리와 조우했다! - \n");
+		memset(monster_1, 0, sizeof(Entity_Setting_));
 		Monster_Name_Library(monster_1, player);
 		Monster_Status_Setting(monster_1);
 		Monster_Ability_Setting(monster_1, player);
 
+		memset(monster_2, 0, sizeof(Entity_Setting_));
 		Monster_Name_Library(monster_2, player);
 		Monster_Status_Setting(monster_2);
 		Monster_Ability_Setting(monster_2, player);
-		printf("[%s] HP ) %d [%s] HP ) %d",
+		printf(" - %s 와 %s 를 조우했다! - \n",
+			monster_1->Name, monster_2->Name);
+
+		Sleep(1000);
+
+		printf("[%s] HP ) %d  / [%s] HP ) %d\n",
 			monster_1->Name,
 			monster_1->Ability.NOW_HP,
 			monster_2->Name,
 			monster_2->Ability.NOW_HP);
+
+		Sleep(1000);
 
 		printf("전투를 시작한다!\n");
 		BattleSystem_Encount_2(monster_1, monster_2, player, &turn);
@@ -88,34 +120,28 @@ void Monster_Encount(Entity_Setting_* monster_1, Entity_Setting_* monster_2, Ent
 void BattleSystem_Encount_1(
 	Entity_Setting_* monster_1,
 	Entity_Setting_* player,
-	int* turn)
+	int* turn
+)
 {
 	// 스피드순으로 공격순서 나열
 	Entity_Setting_* order[2] = { monster_1 , player };
 
 	// ---------- 1) 속도 기준 정렬 ----------
-	for (int i = 0; i < 2; i++) {
-		for (int j = i + 1; j < 2; j++) {
-			if (order[i]->Ability.SPEED < order[j]->Ability.SPEED) {
-				Entity_Setting_* temp = order[i];
-				order[i] = order[j];
-				order[j] = temp;
-			}
-		}
+	if (order[0]->Ability.SPEED < order[1]->Ability.SPEED)
+	{
+		Entity_Setting_* temp = order[0];
+		order[0] = order[1];
+		order[1] = temp;
 	}
-	// 
 
-	// ---------- 2) 동속 처리 ----------
+	// 2명일 때 동속 처리
 	if (order[0]->Ability.SPEED == order[1]->Ability.SPEED)
 	{
-		for (int i = 0; i < 2; i++) {
-			if (order[i]->Ability.SPEED == order[i + 1]->Ability.SPEED) {
-				if (rand() % 2 == 1) {
-					Entity_Setting_* temp = order[i];
-					order[i] = order[i + 1];
-					order[i + 1] = temp;
-				}
-			}
+		if (rand() % 2 == 1)
+		{
+			Entity_Setting_* temp = order[0];
+			order[0] = order[1];
+			order[1] = temp;
 		}
 	}
 
@@ -130,7 +156,7 @@ void BattleSystem_Encount_1(
 
 
 	// 전투
-	while (monster_1->Ability.NOW_HP > 0 &&
+	while (monster_1->Ability.NOW_HP > 0 ||
 		player->Ability.NOW_HP > 0)
 	{
 
@@ -157,31 +183,41 @@ void BattleSystem_Encount_1(
 				target = player;
 			}
 
-			Attack(attacker, target, *turn);
-
+			Attack(attacker, target, turn);
+			
 			Sleep(1500);
 		}
 		if (monster_1->Ability.NOW_HP <= 0)
 		{
 			printf("%s 는 쓰러졋다!\n", monster_1->Name);
 			player->Exp += monster_1->Exp;
+			printf("%d 경험치를 얻었다!\n", monster_1->Exp);
+			Sleep(1000);
+			
+			printf("다음방으로 이동한다!");
+			Sleep(1000);
+
+			return;
 		}
 		else if (player->Ability.NOW_HP <= 0)
 		{
 			printf("%s 는 쓰러졋다!\n", player->Name);
 			player_DIE(player);
+			return;
 		}
 
 	}
-
-
+	_getch();
+	system("cls");
+	Open_Player_Ability_view(player);
 }
 
 
 void BattleSystem_Encount_2(
 	Entity_Setting_* monster_1, 
 	Entity_Setting_* monster_2,
-	Entity_Setting_* player, int* turn)
+	Entity_Setting_* player, int* turn
+)
 {
 	// 스피드순으로 공격순서 나열
 	Entity_Setting_* order[3] = { monster_1 , monster_2 , player };
@@ -255,19 +291,23 @@ void BattleSystem_Encount_2(
 				target = player;
 			}
 
-			Attack(attacker, target, *turn);
+			Attack(attacker, target, turn);
 
 
 			if (monster_1->Ability.NOW_HP <= 0)
 			{
 				printf("%s 는 쓰러졋다!\n", monster_1->Name);
 				player->Exp += monster_1->Exp;
+				printf("%d 경험치를 얻었다!\n", monster_1->Exp);
+
 				BattleSystem_Encount_1(monster_2, player, turn);
 			}
 			else if (monster_2->Ability.NOW_HP <= 0)
 			{
 				printf("%s 는 쓰러졋다!\n", monster_2->Name);
 				player->Exp += monster_2->Exp;
+				printf("%d 경험치를 얻었다!\n", monster_2->Exp);
+
 				BattleSystem_Encount_1(monster_1, player, turn);
 			}
 			else if (player->Ability.NOW_HP <= 0)
@@ -284,9 +324,13 @@ void BattleSystem_Encount_2(
 
 }
 
-void Attack(Entity_Setting_* attacker, Entity_Setting_* target, int* turn)
+void Attack(
+	Entity_Setting_* attacker,
+	Entity_Setting_* target, 
+	int* turn
+)
 {
-	printf("\n [%d턴] %s 의 공격!\n", turn, attacker->Name);
+	printf("\n [%d턴] %s 의 공격!\n", *turn, attacker->Name);
 
 	if (attacker->Ability.HIT >= (rand() % 100) + 1) {
 		int damage = attacker->Ability.ATK - target->Ability.DEF;
@@ -294,7 +338,7 @@ void Attack(Entity_Setting_* attacker, Entity_Setting_* target, int* turn)
 		if (target->Stat.VIT >= (rand() % 100) + 1)
 		{
 			printf("%s이(가) %s의 공격을 가드했다!\n", target->Name, attacker->Name);
-			damage / 2;
+			damage /= 2;
 		}
 
 		if ((int)damage < 1)
@@ -315,7 +359,9 @@ void Attack(Entity_Setting_* attacker, Entity_Setting_* target, int* turn)
 	}
 }
 
-void player_DIE(Entity_Setting_* player)
+void player_DIE(
+	Entity_Setting_* player
+)
 {
 	if (player->Level > 1)
 	{
@@ -328,11 +374,7 @@ void player_DIE(Entity_Setting_* player)
 		player->Layer = 0;
 		player->Exp = 0;
 	}
-
+	return;
 }
 
-void GameEnd()
-{
-
-}
 

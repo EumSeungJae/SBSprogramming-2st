@@ -1,11 +1,7 @@
 ﻿  05_main.c
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(97,13): warning C4047: '함수': 'char *'의 간접 참조 수준이 'char *[100]'과(와) 다릅니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(97,13): warning C4024: 'strcpy': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(99,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char **'입니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(100,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
-      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(100,9):
-      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
-  
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(98,13): warning C4047: '함수': 'char *'의 간접 참조 수준이 'char *[100]'과(와) 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(98,13): warning C4024: 'strcpy': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(100,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char **'입니다.
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(101,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
       C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(101,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
@@ -18,8 +14,8 @@ C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조�
       C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(103,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
   
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(118,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
-      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(118,9):
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(104,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(104,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(119,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
@@ -34,8 +30,8 @@ C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조�
       C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(121,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
   
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(124,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
-      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(124,9):
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(122,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(122,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(125,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
@@ -50,5 +46,9 @@ C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조�
       C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(127,9):
       서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
   
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(132,7): warning C4101: 'd3' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(128,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(128,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a05_자기참조구조체\05_main.c(133,7): warning C4101: 'd3' :참조되지 않은 지역 변수입니다.
   a05_자기참조구조체.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\a05_자기참조구조체.exe

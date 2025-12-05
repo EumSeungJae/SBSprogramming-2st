@@ -1,4 +1,5 @@
 #pragma once
+#include "Entity.h"
 
 typedef enum Layer {
 	F0,
@@ -14,10 +15,22 @@ typedef enum Layer {
 	F10
 }F_Layer;
 
-typedef struct Room {
-	int Monster_room;
-	int Void_room;
-	int Event_room;
-	int Up_room;
-	int Down_room;
-}F_Room;
+typedef enum Room {
+	Monster_room,
+	Void_room,
+	Event_room,
+	Up_room,
+	Down_room
+}Room;
+
+void Labyrinth_Outside(
+	Entity_Setting_* monster_1,
+	Entity_Setting_* monster_2,
+	Entity_Setting_* player);
+
+void Labyrinth_in_room(
+	Entity_Setting_* monster_1,
+	Entity_Setting_* monster_2,
+	Entity_Setting_* player);
+
+void labyrinth_up_down(Entity_Setting_* player, int* room_type);

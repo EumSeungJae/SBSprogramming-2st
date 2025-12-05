@@ -50,6 +50,15 @@ void ScreenPrint(int x, int y, char* string)
 	WriteFile(g_hScreen[g_nScreenIndex], string, strlen(string), &dw, NULL);
 
 }
+
+void gotoxy(int x, int y)
+{
+	COORD pos;
+	pos.X = x;
+	pos.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
 /*
 void SetColor(HANDLE hconsole, Color text_color, Color bg_color)
 {

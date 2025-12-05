@@ -58,6 +58,7 @@ void TitleRender(int* titleCursor)
 	ScreenPrint(20, 12, "점수");
 	ScreenPrint(20, 14, "종료");
 
+	ScreenFlipping();
 }
 
 void SetDataYPosInput(int* y, int Minheight, int MAXheight, int interval)

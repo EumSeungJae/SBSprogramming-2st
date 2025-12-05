@@ -1,4 +1,23 @@
-﻿  Title.c
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\Title.c(15,7): warning C4013: '_kbhit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\Title.c(17,14): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+﻿  player.c
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(106,18): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(107,21): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(108,21): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(109,21): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(110,21): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(111,21): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(112,16): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(113,20): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(114,18): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(115,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(116,23): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(117,24): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(118,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(119,22): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(158,2): warning C4013: 'system'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(176,23): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(187,4): warning C4013: 'Sleep'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(211,27): warning C4047: '함수': 'Entity_Setting_ *'의 간접 참조 수준이 'Entity_Setting_ **'과(와) 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(211,27): warning C4024: 'Open_Player_Ability_view': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(220,7): warning C4013: '_kbhit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\b01_개인프로젝트\player.c(222,14): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
   b01_개인프로젝트.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\b01_개인프로젝트.exe

@@ -1,9 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
+#include "Screen.h"
 #include "Entity.h"
 #include "battle.h"
-#include "Screen.h"
 #include "Title.h"
+#include "player.h"
+#include "labyrinth.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -57,52 +59,71 @@
 * 랜덤 몬스터 출력 > 스위치로 몬스터 type 분류후 & 스텟분배
 * 몬스터 능력치 배분 확인완료
 * 전투시스템 완성 단/ 방어력 > 공격력 시 체력이 추가되어버림.
-*	ㄴ 
+*	ㄴ
 * 명중시스템 도입 기본 80 < 랜덤함수 로 20%확률로 회피가능
 *	ㄴ 요구사항 : DEX로 명중률을 올리는 값을 추가하고싶음
 *				  AGI로 피격률을 낮추는 값을 추가하고싶음
-*		ㄴ 결정사항 : 2단 계산으로 명중치 계산이후 회피계산을 넣기로 결정 
+*		ㄴ 결정사항 : 2단 계산으로 명중치 계산이후 회피계산을 넣기로 결정
 * 몬스터 조우시스템 - 1~2 마리 조우시스템
 *	ㄴ 한마리의 몬스터가 쓰러질시 남은 한마리와 전투 속행
 * 배틀함수 일부 수정
 *	ㄴ 수정내용 : 전투중 데미지 계산 정리.
-*					
+*
 * 플레이어와 몬스터 2개의 공동전투를 위해 구조체를 통합시킴
 * 3개체의 전투를 하고자 코딩을 짯지만 너무 난잡해져서 Ai를 통해
 * 확 축소된 코딩을 출력 및 응용
+*
+* 몬스터 tpye 선별 간략화
+* 보스몬스터 제작
+* 플레이어 데이터 저장기능추가
+* 플레이어 데이터 불러오기추가
 * 
-* 
+*
 */
 
+void Main_view(Entity_Setting_* player)
+{
 
+	Open_Player_Ability_view(&player);
+
+}
 
 
 
 
 int main()
 {
-	ScreenInit();
-	view_Title();
 
-	srand(time(NULL));
-	Entity_Setting_ m_1;
-	
-	Entity_Setting_ m_2;
-	
 	Entity_Setting_ player;
-	strcpy(player.Name, "플레이어");
-	player.Stat.STR = 5;
-	player.Stat.INT = 5;
-	player.Stat.VIT = 5;
-	player.Stat.AGI = 5;
-	player.Stat.DEX = 5;
-	player.Layer = 1;
-	player.Type = 플레이어;
+
+	Entity_Setting_ monster_1;
+
+	Entity_Setting_ monster_2;
+
+	ScreenInit();
+	//view_Title(&player);
+	srand(time(NULL));
+	Load_player(&player);
+
+	while (1)
+	{
+		system("cls");
+		Player_Ability_Setting(&player);
+		Open_Player_Ability_view(&player);
+
+		if (player.Layer > 0)
+		{
+			Labyrinth_in_room(&monster_1, &monster_2, &player);
+		}
+		else if (player.Layer == 0)
+		{
+			Labyrinth_Outside(&monster_1, &monster_2, &player);
+		}
+	}
 
 
-	Player_Ability_Setting(&player);
 
-	Monster_Encount(&m_1,&m_2,&player);
+
 
 	_getch();
 }

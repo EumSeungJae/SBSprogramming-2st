@@ -7,21 +7,22 @@ typedef enum _Monster_Select_Type {
 	스켈레톤,
 	울프,
 	스파이더,
+
 	슬라임,
 	홉고블린,
 	스켈나이트,
 	코볼트,
 	포이즌스파이더,
+
 	데몬슬라임,
 	오크,
 	리치,
 	라이칸,
 	데몬스파이더,
 	Type_END,
-	플레이어 = 98
+	플레이어 = 98,
+	BossMonster
 }Monster_Type_;
-
-
 
 // 플레이어가 사용할 아이템 및 장비기초
 typedef struct _Item {
@@ -38,7 +39,6 @@ typedef struct _Equipment {
 	int Boots;
 	int Gloves;
 }Equipment_;
-
 
 // 능력치
 typedef struct _Status {
@@ -79,14 +79,11 @@ typedef struct _Entity {
 	int turn;
 	int Stet_point;
 	int Skill_point;
+	int coin;
 	int text_color;
 	int bg_color;
+	int room_type;
 }Entity_Setting_;
-
-
-
-
-
 
 
 
@@ -95,3 +92,7 @@ typedef struct _Entity {
 // 몬스터 이름 설정함수
 void Monster_Name_Library(Entity_Setting_* monster, Entity_Setting_* player);
 void Monster_Status_Setting(Entity_Setting_* monster);
+void view_monster_Library(Entity_Setting_* Data1, Entity_Setting_* Data2);
+void Monster_Library_Data();
+
+
