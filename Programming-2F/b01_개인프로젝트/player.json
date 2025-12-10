@@ -1,16 +1,16 @@
 {
     "name": "player",
-    "level": 2,
-    "STR": 10,
+    "level": 1,
+    "STR": 5,
     "INT": 5,
     "VIT": 5,
     "AGI": 5,
     "DEX": 5,
-    "Exp": 10,
-    "Max_Exp": 24,
-    "Layer": 1,
+    "Exp": 0,
+    "Max_Exp": 20,
+    "Layer": 0,
     "Stet_point": 0,
     "Skill_point": 0,
     "coin": 10,
-    "room_type": 2
+    "room_type": 0
 }

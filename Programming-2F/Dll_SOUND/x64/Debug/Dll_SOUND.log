@@ -1,0 +1,7 @@
+﻿  Sound.cpp
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\Dll_SOUND\Sound.cpp(8,12): error C2144: 구문 오류: void'은(는) ';' 다음에 와야 합니다.
+  (소스 파일 '/Sound.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\Dll_SOUND\Sound.cpp(8,1): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 '/Sound.cpp'을(를) 컴파일하는 중)
+  

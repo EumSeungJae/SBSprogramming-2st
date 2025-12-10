@@ -77,17 +77,31 @@
 * 보스몬스터 제작
 * 플레이어 데이터 저장기능추가
 * 플레이어 데이터 불러오기추가
-* 
 *
+* ScreenPrint 와 printf 가 충돌함
+* 
+*  === 개선사항 ===
+*  쌤 >
+*  컨텐츠가 기대됩니다. 개발 구현 내용이 크기 때문에 데이터들을
+*  다른 프로그램에서 사용할 수 있게 잘 저장해보세요.
+* 
+*  게임의 흐름을 만드는 방법 이해
+* 반복문, 조건문, 포인터, 변수
+* 함수 절차적 언어
+* 
+* C++ 에서는 "객체" "class"에 집중
+* 
+* 몬스터도감에 버그발생
+* 출력에 자동으로 넘어가짐현상
+* 
+* 해결 >> 자연스러워보이게 Sleep함수를 이용하여
+* 전시관람처럼 변경시킴
+* 
+* 몬스터와의 전투가 자동전투임에도 시간이 오래걸려 루즈함.
+* 개선책
+* 체력을 줄인다 or 전투기능을 축약시킨다.
+* 
 */
-
-void Main_view(Entity_Setting_* player)
-{
-
-	Open_Player_Ability_view(&player);
-
-}
-
 
 
 
@@ -100,14 +114,15 @@ int main()
 
 	Entity_Setting_ monster_2;
 
-	ScreenInit();
-	//view_Title(&player);
+	//ScreenInit();
+	view_Title(&player);
 	srand(time(NULL));
-	Load_player(&player);
-
+	// Load_player(&player);
+	// 여기서 타이틀만 주석처리하면 됩니다.
 	while (1)
 	{
-		system("cls");
+		system("cls"); // << 문제지점
+		
 		Player_Ability_Setting(&player);
 		Open_Player_Ability_view(&player);
 
@@ -126,19 +141,4 @@ int main()
 
 
 	_getch();
-}
-
-void AddData()
-{
-
-}
-
-void SaveData()
-{
-
-}
-
-void LoadData()
-{
-
 }

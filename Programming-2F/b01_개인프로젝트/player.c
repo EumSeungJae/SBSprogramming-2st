@@ -156,7 +156,7 @@ void Open_Player_Ability_view(Entity_Setting_* player)
 void Open_Player_Status_Console(Entity_Setting_* player)
 {
 	system("cls");
-	ScreenInit();
+	//ScreenInit();
 	Open_Player_Ability_view(player);
 	printf("레벨업을 실시합니다.\n");
 

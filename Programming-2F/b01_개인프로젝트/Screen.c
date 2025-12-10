@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include <Windows.h>
 #include "Entity.h"
+#include <stdarg.h>
 
 static int g_nScreenIndex;
 static HANDLE g_hScreen[2];
@@ -43,6 +44,7 @@ void ScreenRelease()
 
 void ScreenPrint(int x, int y, char* string)
 {
+
 	DWORD dw;
 	COORD CursorPosition = { x, y };
 	SetConsoleCursorPosition(g_hScreen[g_nScreenIndex], CursorPosition);
@@ -58,16 +60,3 @@ void gotoxy(int x, int y)
 	pos.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
-
-/*
-void SetColor(HANDLE hconsole, Color text_color, Color bg_color)
-{
-	HANDLE hconsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hconsole, (bg_color << 4) | text_color);
-}
-
-void ResetColor(HANDLE hconsole)
-{
-	SetColor(g_hScreen[g_nScreenIndex], Èò»ö, °ËÁ¤);
-}
-*/

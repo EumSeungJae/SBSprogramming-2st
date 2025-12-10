@@ -1,2 +1,1 @@
-﻿  main.c
-  a13_라이브러리 인풋.vcxproj -> C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\x64\Debug\a13_라이브러리 인풋.exe
+﻿LINK : fatal error LNK1104: 'DL_Sound.dll' 파일을 열 수 없습니다.

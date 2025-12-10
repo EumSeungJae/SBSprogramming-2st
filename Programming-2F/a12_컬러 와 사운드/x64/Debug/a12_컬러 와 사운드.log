@@ -1,24 +1,24 @@
 ﻿  console_monster.c
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(4,2): error C2061: 구문 오류: 식별자 'Color'
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(5,8): error C2061: 구문 오류: 식별자 'bg_color'
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(5,8): error C2059: 구문 오류: ';'
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(7,1): error C2059: 구문 오류: '}'
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(9,27): error C2143: 구문 오류: ')'이(가) '*' 앞에 없습니다.
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(9,27): error C2143: 구문 오류: '{'이(가) '*' 앞에 없습니다.
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.h(9,36): error C2059: 구문 오류: ')'
-  (소스 파일 'console_monster.c'을(를) 컴파일하는 중)
+  (소스 파일 '../a12_컬러 와 사운드/console_monster.c'을(를) 컴파일하는 중)
   
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.c(5,27): error C2143: 구문 오류: ')'이(가) '*' 앞에 없습니다.
 C:\Users\user\Desktop\SBSprogramming-2st\Programming-2F\a12_컬러 와 사운드\console_monster.c(5,27): error C2143: 구문 오류: '{'이(가) '*' 앞에 없습니다.

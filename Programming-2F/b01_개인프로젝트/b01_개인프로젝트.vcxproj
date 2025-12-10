@@ -127,7 +127,6 @@
     <ClCompile Include="battle.c" />
     <ClCompile Include="Entity.c" />
     <ClCompile Include="labyrinth.c" />
-    <ClCompile Include="monster.c" />
     <ClCompile Include="parson.c" />
     <ClCompile Include="player.c" />
     <ClCompile Include="Screen.c" />
@@ -138,7 +137,6 @@
     <ClInclude Include="battle.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="labyrinth.h" />
-    <ClInclude Include="monster.h" />
     <ClInclude Include="parson.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="Screen.h" />

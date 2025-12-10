@@ -283,7 +283,4 @@ void Labyrinth_in_room(
 	}
 
 }
-void labyrinth_up_down(Entity_Setting_* player, int* selet)
-{
 
-}

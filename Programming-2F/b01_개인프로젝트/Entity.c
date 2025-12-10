@@ -338,7 +338,7 @@ void Monster_Library_Data()
 				break;
 			}
 		}
-		Sleep(200);
+		Sleep(1000);
 	}
 }
 

@@ -32,5 +32,3 @@ void Labyrinth_in_room(
 	Entity_Setting_* monster_1,
 	Entity_Setting_* monster_2,
 	Entity_Setting_* player);
-
-void labyrinth_up_down(Entity_Setting_* player, int* room_type);
